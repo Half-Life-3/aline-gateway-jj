@@ -67,16 +67,18 @@ pipeline {
 		
 		
 		stage('Sonarqube whatever'){
-			script{
-				def mvn = tool 'Default Maven';
-			}steps{
+			steps{
+				script{
+					def mvn = tool 'Default Maven';
+				}
 				withQonarQubeEnv(){
 					sh "mvn clean verify sonar:sonar -Dsonar.projectKey=aline-financial"
 				 
 				
 				}
-			}
+			
 		
+			}
 		}
 		
     }
