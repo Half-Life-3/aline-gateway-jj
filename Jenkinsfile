@@ -72,7 +72,7 @@ pipeline {
 					def mvn = tool 'default_maven';
 				}
 				withSonarQubeEnv(){
-					sh "mvn clean verify sonar:sonar -Dsonar.projectKey=aline-financial"
+					sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=aline-financial"
 				 
 				
 				}
