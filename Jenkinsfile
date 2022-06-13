@@ -64,5 +64,16 @@ pipeline {
 				}
             }
         }
+		
+		
+		stage('Sonarqube whatever'){
+			def mvn = tool 'Default Maven';
+			withQonarQubeEnv(){
+			 sh "mvn clean verify sonar:sonar -Dsonar.projectKey=aline-financial"
+			
+			}
+		
+		}
+		
     }
 }
